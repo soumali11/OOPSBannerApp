@@ -1,59 +1,34 @@
 /**
- * OOPSBannerApp UC6 - OOPS Banner Application (Use Case 6)
+ * OOPSBannerApp UC5 - Render OOPS as Banner using Inline Array Initialization
  *
- * This use case extends UC5 by implementing a modular approach to generate each
- * letter's pattern through dedicated methods. This enhances code reusability and
- * maintainability by separating pattern generation logic from the main display logic.
+ * This use case extends UC4 by defining and populating the String array in a more
+ * concise way at the time of declaration using String.join() method to create each
+ * line of the banner. This further enhances code readability and maintainability.
  *
- * @author Soumali
- * @version 6.0
+ * @author Prarabdha Sachan
+ * @version 5.0
  */
 
-
+// Extend the user story 4 to further develop the OOPS Banner Application by
+// not only using String arrays to hold banner lines and printing them in a
+// loop. But also by defining and populating the array in a more concise way
+// at the time of declaration using String.join() method to create each line
+// of the banner.
 
 
 public class OOPSBannerApp {
-    public static String[] getOPatternO() {
-        return new String[] {
-            "   ***   ",
-            "**     **",
-            "**     **",
-            "**     **",
-            "**     **",
-            "**     **",
-            "   ***   "
-        };
-    }
-    public static String[] getPPattern(){
-        return new String[]{
-            " *****   ",
-            " **  **  ",
-            " **   ** ",
-            " ** **   ",
-            " **      ",
-            " **      ",
-            " **      "
-        };
-    }
-    public static String[] getSPattern(){
-        return new String[]{
-            "   ***   ",
-            " **    **",
-            " **      ",
-            "    **   ",
-            "      ** ",
-            " **   ** ",
-            "   ***   "
-        };
-    }
-
     public static void main(String[] args){
-        String[] oPattern = getOPatternO();
-        String[] pPattern = getPPattern();
-        String[] sPattern = getSPattern();
-
-        for (int i = 0; i < oPattern.length; i++) {
-            System.out.println(oPattern[i] + "   " + oPattern[i] + "   " + pPattern[i] + "   " + sPattern[i]);
+        String[] lines = {
+            String.join(" ", "   ***   ", "   ***   ", " *****   ", "   ***   "),
+            String.join(" ", "**     **", "**     **", " **  **  ", " **    **"),
+            String.join(" ", "**     **", "**     **", " **   ** ", " **      "),
+            String.join(" ", "**     **", "**     **", " ** **   ", "    **   "),
+            String.join(" ", "**     **", "**     **", " **      ", "       **"),
+            String.join(" ", "**     **", "**     **", " **      ", " **    **"),
+            String.join(" ", "   ***   ", "   ***   ", " **      ", "   ***   ")
+        };
+        for (String line : lines) {
+            System.out.println(line);       
         }
     }
 }
